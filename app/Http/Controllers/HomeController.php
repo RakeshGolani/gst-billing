@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Party;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $count['total_party'] = Party::count();
+        $count['total_client'] = Party::where('party_type', 'client')->count();
+        $count['total_vendor'] = Party::where('party_type', 'vendor')->count();
+        $count['total_employee'] = Party::where('party_type', 'employee')->count();
+        return view('dashboard', $count);
     }
 }

@@ -25,7 +25,7 @@
                     <i class="mdi mdi-plus-circle"></i> Add Party
                 </a>
                 <h4 class="header-title mb-4 text-uppercase">Manage Clients</h4>
-                <table class="table table-hover m-0 table-centered dt-responsive nowrap w-100 table-bordered" id="tickets-table">
+                <table class="table table-hover m-0 table-centered dt-responsive nowrap w-100 table-bordered" id="party-table">
                     <thead>
                         <tr>
                             <th>S.No.</th>
@@ -103,8 +103,11 @@
 </div>
 @endsection
 
-
+@push('script')
 <script>
+    new DataTable('#party-table');
+    
     var url = "{{ route('delete-party') }}";
     var csrfToken = "{{ csrf_token() }}";
 </script>
+@endpush

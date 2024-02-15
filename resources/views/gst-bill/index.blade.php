@@ -23,7 +23,7 @@
                 </a>
                 <h4 class="header-title mb-4 text-uppercase">Manage Bills</h4>
 
-                <table class="table table-hover m-0 table-centered dt-responsive nowrap w-100 table-bordered" id="tickets-table">
+                <table class="table table-hover m-0 table-centered dt-responsive nowrap w-100 table-bordered" id="gst-table">
                     <thead>
                         <tr>
                             <th>S.No.</th>
@@ -86,5 +86,10 @@
     <!-- End Page content -->
     <!-- ============================================================== -->
 </div>
-
 @endsection
+
+@push('script')
+    <script>
+        new DataTable('#gst-table')
+    </script>
+@endpush

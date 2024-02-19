@@ -7,6 +7,7 @@ use App\Http\Controllers\VendorInvoice;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PartyController;
 use App\Http\Controllers\GstBillController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,3 +71,5 @@ Route::resource('vendor-invoice',VendorInvoice::class)->names([
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+//Route::post('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password-reset');

@@ -44,7 +44,6 @@ class PartyController extends Controller
         return view('party/add');
     }
 
-
     # Function to create/store party
     public function createParty(Request $request)
     {
@@ -52,7 +51,7 @@ class PartyController extends Controller
         $request->validate([
             'party_type' => 'required',
             'full_name' => 'required|string|min:2|max:20',
-            'phone_no' => 'required',
+            'phone_no' => 'required|max:10',
             'address' => 'required|max:255',
 
             'account_holder_name' => 'required|string|min:2|max:20',
@@ -86,7 +85,7 @@ class PartyController extends Controller
         $request->validate([
             'party_type' => 'required',
             'full_name' => 'required|string|min:2|max:20',
-            'phone_no' => 'required|numeric|max:10',
+            'phone_no' => 'required|max:10',
             'address' => 'required|max:255',
 
             'account_holder_name' => 'required|string|min:2|max:20',
@@ -140,6 +139,6 @@ class PartyController extends Controller
 
         return redirect()->route('manage-parties');
 
-        }
+    }
 
 }

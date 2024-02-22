@@ -25,10 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $count['total_party'] = Party::count();
-        $count['total_client'] = Party::where('party_type', 'client')->count();
-        $count['total_vendor'] = Party::where('party_type', 'vendor')->count();
-        $count['total_employee'] = Party::where('party_type', 'employee')->count();
-        return view('dashboard', $count);
+        $data['total_party'] = Party::count();
+        $data['total_client'] = Party::where('party_type', 'client')->count();
+        $data['total_vendor'] = Party::where('party_type', 'vendor')->count();
+        $data['total_employee'] = Party::where('party_type', 'employee')->count();
+        return view('dashboard', $data);
+        
     }
 }

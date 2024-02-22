@@ -105,15 +105,31 @@ class GstBillController extends Controller
         //return redirect()->route('manage-gst-bills')->withStatus("Gst Bill updated successfully");
     }
 
-    public function delete($table, $id)
+    // public function delete($table, $id)
+    // {
+    //     //return $table . '' . $id;exit;
+    //     $param = array('is_deleted' => 1);
+    //     DB::table($table)->where('id', $id)->update($param);
+
+    //     Session::flash('success', 'Record deleted successfully');
+    //     return redirect()->back();
+    //     //return redirect()->back()->withStatus("Record deleted successfully");
+    // }
+
+    public function delete(Request $request)
     {
-        //return $table . '' . $id;exit;
-        $param = array('is_deleted' => 1);
-        DB::table($table)->where('id', $id)->update($param);
+        $param = $request->all();
+
+        // if (!isset($param['id'])) {
+        //     Session::flash('error', 'No ID provided for deletion');
+        //     return redirect()->back();
+        // }
+        
+        GstBill::where('id', $param['id'])->update(['is_deleted' => 1]);
 
         Session::flash('success', 'Record deleted successfully');
         return redirect()->back();
-        //return redirect()->back()->withStatus("Record deleted successfully");
     }
+    
 
 }

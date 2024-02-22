@@ -46,7 +46,8 @@ Route::get('/print-gst-bill/{id}', [GstBillController::class,'print'])->name('pr
 Route::post('/create-gst-bill', [GstBillController::class,'createGstBill'])->name('create-gst-bill');
 
 // Soft Delete route
-Route::get('/delete/{table}/{id}', [GstBillController::class,'delete'])->name('delete');
+//Route::get('/delete/{table}/{id}', [GstBillController::class,'delete'])->name('delete');
+Route::post('/delete', [GstBillController::class,'delete'])->name('delete');
 
 // Resource Controller routes
 Route::resource('vendor-invoice',VendorInvoice::class)->names([

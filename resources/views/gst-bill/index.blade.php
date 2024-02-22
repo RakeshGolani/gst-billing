@@ -62,7 +62,9 @@
                                     <a href="javascript: void(0);" class="table-action-btn dropdown-toggle arrow-none btn btn-light btn-sm" data-toggle="dropdown" aria-expanded="false"><i class="mdi mdi-dots-horizontal"></i></a>
                                     <div class="dropdown-menu dropdown-menu-right">
                                     <a class="dropdown-item" href="{{ route('edit-gst-bill', $bill->id) }}"><i class="mdi mdi-pencil mr-2 text-muted font-18 vertical-middle"></i>Edit</a>
-                                        <a class="dropdown-item" href="{{ route('delete', ['gst_bills', $bill->id]) }}"><i class="mdi mdi-delete mr-2 text-muted font-18 vertical-middle"></i>Delete</a>
+                                        <!-- <a class="dropdown-item" href="{{ route('delete', ['gst_bills', $bill->id]) }}"><i class="mdi mdi-delete mr-2 text-muted font-18 vertical-middle"></i>Delete</a> -->
+                                        <button type="button" class="dropdown-item" onclick="destroyFunction('{{ $bill->id }}')"><i class="mdi mdi-delete mr-2 text-muted font-18 vertical-middle"></i>Delete</button>
+
                                         <a class="dropdown-item" href="{{ route('print-gst-bill', $bill->id) }}"><i class="mdi mdi-printer mr-2 text-muted font-18 vertical-middle"></i>
                                             Print</a>
                                     </div>
@@ -91,5 +93,8 @@
 @push('script')
     <script>
         new DataTable('#gst-table')
+
+        var url = "{{ route('delete') }}";
+        var csrfToken = "{{ csrf_token() }}";
     </script>
 @endpush

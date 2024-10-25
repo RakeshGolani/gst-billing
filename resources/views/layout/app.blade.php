@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Dashboard</title>
+    <title> @yield('title') </title>
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/users/user-fevicon.png') }}">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

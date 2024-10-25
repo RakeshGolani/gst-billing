@@ -1,5 +1,5 @@
 @extends('layout.app')
-
+@section('title','Manage Clients')
 @section('content')
 <!-- Start Content-->
 <div class="container-fluid">

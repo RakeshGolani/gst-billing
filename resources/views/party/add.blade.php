@@ -1,5 +1,5 @@
 @extends('layout.app')
-
+@section('title','Add Party')
 @section('content')
 <!-- Start Content-->
 <div class="container-fluid">

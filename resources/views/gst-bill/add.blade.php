@@ -1,5 +1,5 @@
 @extends('layout.app')
-
+@section('title','Create Gst Bill')
 @section('content')
 <div class="container-fluid">
 

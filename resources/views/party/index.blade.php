@@ -42,11 +42,11 @@
 
                             <td><b>{{ $index+1 }}</b></td>
 
-                            <td><span class="badge badge-info">{{ $party->party_type }}</span></td>
+                            <td><span class="badge badge-outline-info">{{ Str::title($party->party_type) }}</span></td>
 
                             <td>
                                 <ul class="list-unstyled">
-                                    <li><b>Name :</b><span>{{ $party->full_name }}</span></li>
+                                    <li><b>Name :</b><span>{{ Str::title($party->full_name) }}</span></li>
                                     <li><b>Phone :</b><span>{{ $party->phone_no }}</span></li>
                                     <li><b>Address :</b><span>{{ $party->address }}</span></li>
                                 </ul>
@@ -54,7 +54,7 @@
 
                             <td>
                                 <ul class="list-unstyled">
-                                    <li><b>Account Holder Name :</b><span>{{ $party->account_holder_name }}</span></li>
+                                    <li><b>Account Holder Name :</b><span>{{ Str::title($party->account_holder_name) }}</span></li>
                                     <li><b>Acc No :</b><span> {{ $party->account_no }}</span></li>
                                     <li><b>Bank Name :</b> <span> {{ $party->bank_name }}</span></li>
                                     <li><b>IFSC Code :</b> <span> {{ $party->ifsc_code }}</span></li>

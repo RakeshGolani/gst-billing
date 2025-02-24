@@ -43,7 +43,7 @@
                             <td>#{{ $bill->invoice_no }}</td>
                             <td>
                                 <ul class="list-unstyled">
-                                    <li><b>Name:</b> <span> {{ $bill->party->full_name }}</span></li>
+                                    <li><b>Name:</b> <span> {{ Str::title($bill->party->full_name) }}</span></li>
                                     <li><b>Phone:</b> <span> {{ $bill->party->phone_no }}</span></li>
                                 </ul>
                             </td>
